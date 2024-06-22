@@ -8,4 +8,14 @@ function Form({route,method}){
     const [password,setPassword] = useState("")
     const [loading,setLoading] = useState(false)
     const navigate = useNavigate()
+
+    const name = method === "login" ? "login" : "register"
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+    }
+
+    return <form onSubmit={handleSubmit} className="form-container">
+        <h1>{name}</h1>
+    </form>
 }
